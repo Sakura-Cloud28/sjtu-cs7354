@@ -1,0 +1,36 @@
+git checkout -b feature-newFunc
+git add mydiary\diary.txt
+git commit -m "Added diary entry for feature work"
+git add mydiary\diary.txt
+git commit -m "Added another diary entry for feature work"
+git merge HEAD~
+git checkout main
+git merge feature-newFunc
+
+git checkout main
+git cherry-pick experiment~
+git push
+
+git checkout dev
+git log --oneline
+git revert -n HEAD~..HEAD
+git commit -m "revert"
+git log --oneline
+git push
+
+git checkout main
+git add frontend\styles.css
+git commit -m "change font"
+git diff feature-upload main --stat
+git merge main
+git add frontend\styles.css
+git commit
+git checkout main
+git rebase feature-upload
+
+git checkout documentation --
+git rebase -i main
+git checkout main
+git rebase documentation
+git push origin main
+
